@@ -11,7 +11,7 @@
         public String BookLanguage { get; set; }
         public String BookFormat { get; set; }
         public String? BookDescription { get; set; }
-        public String? BookEdition { get; set; }
+        public int? BookEdition { get; set; }
         public int? BookPages { get; set; }
         public DateOnly? BookPublicationDate { get; set; }
 
