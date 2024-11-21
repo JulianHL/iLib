@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Books Table";
+}
+@model List<StudentBook>
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Isbn</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Language</th>
+            <th scope="col">Format</th>
+            <th scope="col">Description</th>
+            <th scope="col">Edition</th>
+            <th scope="col">Pages</th>
+            <th scope="col">Publication Date</th>
+            <th scope="col">Starting Date</th>
+            <th scope="col">Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var StudentBook in Model)
+        {
+
+            <tr>
+                <th scope="row">@StudentBook.BookIsbn</th>
+                <td>@StudentBook.BookTitle</td>
+                <td>@StudentBook.BookAuthor</td>
+                <td>@StudentBook.BookQuantity</td>
+                <td>@StudentBook.BookPublisher</td>
+                <td>@StudentBook.BookGenre</td>
+                <td>@StudentBook.BookLanguage</td>
+                <td>@StudentBook.BookFormat</td>
+                <td>@StudentBook.BookDescription</td>
+                <td>@StudentBook.BookEdition</td>
+                <td>@StudentBook.BookPages</td>
+                <td>@StudentBook.BookPublicationDate</td>
+                <td>@StudentBook.BookStartingDate</td>
+                <td>@StudentBook.BookDueDate</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
