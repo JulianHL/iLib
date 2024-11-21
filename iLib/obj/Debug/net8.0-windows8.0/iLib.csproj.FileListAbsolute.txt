@@ -1,0 +1,9 @@
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.csproj.AssemblyReference.cache
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.AssemblyInfoInputs.cache
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.AssemblyInfo.cs
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.csproj.CoreCompileInputs.cache
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.RazorAssemblyInfo.cache
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.RazorAssemblyInfo.cs
+C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.sourcelink.json

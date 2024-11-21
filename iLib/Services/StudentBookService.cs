@@ -7,7 +7,7 @@ namespace iLib.Services
     public class StudentBookService : BaseService
     {
 
-        public List<StudentBooks> GetAllStudentBooksByStudentId()
+        public List<StudentBook> GetAllStudentBooksByStudentId()
         {
             using (SqlConnection? connection = EstablishConnection())
             {
@@ -17,7 +17,7 @@ namespace iLib.Services
                 }
 
                 DBStudentBooksTable dB = new DBStudentBooksTable();
-                List<StudentBooks> studentBooks = new List<StudentBooks>();
+                List<StudentBook> studentBooks = new List<StudentBook>();
                 if (studentBooks == null)
                 {
                     throw new Exception("The connection was not established, connection is null");

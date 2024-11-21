@@ -6,18 +6,18 @@ namespace iLib.Repositories
 {
     public class DBStudentBooksTable
     {
-        public List<StudentBooks>? GetAllStudentBooksByStudentId(SqlConnection connection)
+        public List<StudentBook>? GetAllStudentBooksByStudentId(SqlConnection connection)
         {
-            List<StudentBooks> StudentBooks;
+            List<StudentBook> StudentBooks;
             string storedProcedure = "[dbo].[GetStudentBooks]";
             using (SqlCommand command = new SqlCommand(storedProcedure, connection))
             {
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    StudentBooks = new List<StudentBooks>();
+                    StudentBooks = new List<StudentBook>();
                     while (reader.Read())
                     {
-                        StudentBooks.Add(new StudentBooks
+                        StudentBooks.Add(new StudentBook
                         {
                             BookTitle = reader.GetString(0),
                             BookAuthor = reader.GetString(1),
