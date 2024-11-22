@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("iLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e74d1f093fd454ecf9625ea039dd76ef990c56c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6b36c52d7c87386e76cbb9fc1f2880d3ae7c8bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("iLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("iLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

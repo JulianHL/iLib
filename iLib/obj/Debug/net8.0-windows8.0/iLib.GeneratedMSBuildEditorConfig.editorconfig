@@ -34,8 +34,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/juldh/Desktop/Desktop/Systems Development/iLibRepository/iLib/iLib/Views/StudentBooks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEJvb2tzXEluZGV4LmNzaHRtbA==
+[C:/Users/juldh/Desktop/Desktop/Systems Development/iLibRepository/iLib/iLib/Views/StudentDashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/juldh/Desktop/Desktop/Systems Development/iLibRepository/iLib/iLib/Views/StudentDashboard/StudentBooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudERhc2hib2FyZFxTdHVkZW50Qm9va3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/juldh/Desktop/Desktop/Systems Development/iLibRepository/iLib/iLib/Views/_ViewImports.cshtml]

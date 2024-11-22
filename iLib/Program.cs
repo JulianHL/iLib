@@ -26,6 +26,6 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "student",
-    pattern: "StudentBooks/{action=Index}/{id?}");
+    pattern: "StudentDashboard/{action=Index}/{id?}");
 
 app.Run();
