@@ -1,6 +1,7 @@
 ﻿
 using iLib.Models;
 using Microsoft.Data.SqlClient;
+using System.Numerics;
 
 namespace iLib.Repositories
 {
@@ -43,6 +44,27 @@ namespace iLib.Repositories
             }
             return StudentBooks;
 
+        }
+
+        public bool AddStudentBooks(SqlConnection connection,int user_Id, StudentBook studentBook)
+        {
+            bool isStudentBookAdded = false;
+            string storedProcedure = "";
+            using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+            {
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@User_Id", user_Id);
+                command.Parameters.AddWithValue("@Book_Isbn", studentBook.BookIsbn);
+                command.Parameters.AddWithValue("@Starting_Date",studentBook.BookStartingDate);
+                command.Parameters.AddWithValue("@Due_Date", studentBook.BookDueDate);
+                int affectedRows = command.ExecuteNonQuery();
+                if (affectedRows > 0)
+                {
+                    isStudentBookAdded = true;
+                }
+
+            }
+            return isStudentBookAdded;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace iLib.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return View("Home/Index");
+                return View();
             }
                
             }

@@ -21,7 +21,7 @@ namespace iLib.Services
                 List<StudentBook>? studentBooks = dB.GetAllStudentBooksByStudentId(connection,user_Id);
                 if (studentBooks == null)
                 {
-                    throw new Exception("The connection was not established, connection is null");
+                    throw new Exception("Internal Server Error");
                 }
 
                 return studentBooks;
