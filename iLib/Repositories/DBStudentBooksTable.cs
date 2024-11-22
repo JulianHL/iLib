@@ -7,14 +7,14 @@ namespace iLib.Repositories
 {
     public class DBStudentBooksTable
     {
-        public List<StudentBook>? GetAllStudentBooksByStudentId(SqlConnection connection, int user_Id)
+        public List<StudentBook>? GetAllStudentBooksByStudentId(SqlConnection connection, int userId)
         {
             List<StudentBook> StudentBooks;
             string storedProcedure = "[dbo].[GetStudentBooks]";
             using (SqlCommand command = new SqlCommand(storedProcedure, connection))
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@User_Id", user_Id);
+                command.Parameters.AddWithValue("@User_Id", userId);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     StudentBooks = new List<StudentBook>();
@@ -46,17 +46,17 @@ namespace iLib.Repositories
 
         }
 
-        public bool AddStudentBooks(SqlConnection connection,int user_Id, StudentBook studentBook)
+        public bool AddStudentBooks(SqlConnection connection,int userId, string bookIsbn, DateOnly startingDate, DateOnly dueDate)
         {
             bool isStudentBookAdded = false;
-            string storedProcedure = "";
+            string storedProcedure = "[dbo].[AddStudentBooks]";
             using (SqlCommand command = new SqlCommand(storedProcedure, connection))
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@User_Id", user_Id);
-                command.Parameters.AddWithValue("@Book_Isbn", studentBook.BookIsbn);
-                command.Parameters.AddWithValue("@Starting_Date",studentBook.BookStartingDate);
-                command.Parameters.AddWithValue("@Due_Date", studentBook.BookDueDate);
+                command.Parameters.AddWithValue("@User_Id", userId);
+                command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
+                command.Parameters.AddWithValue("@Starting_Date",startingDate);
+                command.Parameters.AddWithValue("@Due_Date", dueDate);
                 int affectedRows = command.ExecuteNonQuery();
                 if (affectedRows > 0)
                 {
@@ -66,5 +66,25 @@ namespace iLib.Repositories
             }
             return isStudentBookAdded;
         }
+
+        public bool ConflictStudentBooks(SqlConnection connection, string bookIsbn)
+        {
+            bool doesStudentBookConflict = false;
+            string storedProcedure = "[dbo].[ConflictStudentBooks]";
+            using(SqlCommand command = new SqlCommand(storedProcedure, connection))
+            {
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
+                using(SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        doesStudentBookConflict = true;
+                    }
+                }
+            }
+            return doesStudentBookConflict;
+        }
+        
     }
 }

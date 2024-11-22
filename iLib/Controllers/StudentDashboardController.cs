@@ -1,4 +1,5 @@
 ﻿using iLib.Services;
+using iLib.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace iLib.Controllers
@@ -17,18 +18,34 @@ namespace iLib.Controllers
             return View();
         }
 
-        public IActionResult StudentBooks(int user_Id)
+        public IActionResult StudentBooks(int userId)
         {
             try
             {
-                return View(_studentBookService.GetAllStudentBooksByStudentId(user_Id));
+                return View(_studentBookService.GetAllStudentBooksByStudentId(userId));
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return View();
+                return View("Index");
             }
+        }
 
+        public string AddStudentBook(int userId, string bookIsbn)
+        {
+            try
+            {
+                if(!_studentBookService.AddStudentBooks(userId, bookIsbn))
+                {
+                    return "There was a problem";
+                }
+
+                return "You borrow this book successfuly";
+
+            } catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }
