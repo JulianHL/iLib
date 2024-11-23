@@ -1,4 +1,7 @@
-﻿<header>
+﻿@{
+    ViewData["Title"] = "Student Dashboard";
+}
+<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
@@ -12,6 +15,10 @@
             </div>   
         </nav>
 </header>
+
+<div class="d-flex align-content-center">
+    <a class="btn btn-outline-success" asp-area="" asp-controller="StudentDashboard" asp-action="AddStudentBook" asp-route-userId="4000" asp-route-bookIsbn="978-1856698961">Borrow</a>
+</div>
 
 
 <footer class="border-top footer text-muted">
