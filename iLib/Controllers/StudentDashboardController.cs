@@ -35,15 +35,11 @@ namespace iLib.Controllers
         {
             try
             {
-                if(!_studentBookService.AddStudentBooks(userId, bookIsbn))
-                {
-                    return "There was a problem";
-                }
-
-                return "You borrow this book successfuly";
+                return _studentBookService.AddStudentBooks(userId, bookIsbn);
 
             } catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 return ex.Message;
             }
         }

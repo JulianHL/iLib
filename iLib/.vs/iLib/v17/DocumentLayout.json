@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\studentbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\studentbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\repositories\\dbstudentbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:repositories\\dbstudentbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\services\\studentbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:services\\studentbookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,20 +11,44 @@
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:controllers\\studentdashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\repositories\\dbstudentbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:repositories\\dbstudentbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\repositories\\dbbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:repositories\\dbbookstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\studentbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\studentbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:views\\studentdashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\views\\studentdashboard\\studentbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:views\\studentdashboard\\studentbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -55,14 +67,6 @@
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|c:\\users\\juldh\\desktop\\desktop\\systems development\\ilibrepository\\ilib\\ilib\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7CFD968C-626B-40D0-92B5-2E69E4885822}|iLib.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -74,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,59 +90,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBBooksTable.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Repositories\\DBBooksTable.cs",
+              "RelativeDocumentMoniker": "Repositories\\DBBooksTable.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Repositories\\DBBooksTable.cs",
+              "RelativeToolTip": "Repositories\\DBBooksTable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T00:38:32.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StudentBookService.cs",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Services\\StudentBookService.cs",
-              "RelativeDocumentMoniker": "Services\\StudentBookService.cs",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Services\\StudentBookService.cs",
-              "RelativeToolTip": "Services\\StudentBookService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwCsAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T09:08:42.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentDashboardController.cs",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\StudentDashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\StudentDashboardController.cs",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\StudentDashboardController.cs",
-              "RelativeToolTip": "Controllers\\StudentDashboardController.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wC0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T20:59:17.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T10:01:18.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "DBStudentBooksTable.cs",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Repositories\\DBStudentBooksTable.cs",
               "RelativeDocumentMoniker": "Repositories\\DBStudentBooksTable.cs",
               "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Repositories\\DBStudentBooksTable.cs",
               "RelativeToolTip": "Repositories\\DBStudentBooksTable.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAowEEAAAANAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T05:42:14.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -146,12 +124,11 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T06:12:47.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T06:12:47.088Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "BaseService.cs",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Services\\BaseService.cs",
               "RelativeDocumentMoniker": "Services\\BaseService.cs",
@@ -164,7 +141,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\StudentDashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\StudentDashboard\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAACQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-22T21:08:15.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentBookService.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Services\\StudentBookService.cs",
+              "RelativeDocumentMoniker": "Services\\StudentBookService.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Services\\StudentBookService.cs",
+              "RelativeToolTip": "Services\\StudentBookService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T09:08:42.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentDashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\StudentDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentDashboardController.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\StudentDashboardController.cs",
+              "RelativeToolTip": "Controllers\\StudentDashboardController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAwwB0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T20:59:17.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "StudentBook.cs",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\StudentBook.cs",
               "RelativeDocumentMoniker": "Models\\StudentBook.cs",
@@ -172,37 +187,60 @@
               "RelativeToolTip": "Models\\StudentBook.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:37:28.134Z",
+              "WhenOpened": "2024-11-21T08:37:28.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T05:47:22.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\StudentDashboard\\Index.cshtml",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\Index.cshtml",
-              "RelativeToolTip": "Views\\StudentDashboard\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-22T21:08:15.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "StudentBooks.cshtml",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\StudentBooks.cshtml",
               "RelativeDocumentMoniker": "Views\\StudentDashboard\\StudentBooks.cshtml",
               "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\StudentDashboard\\StudentBooks.cshtml",
               "RelativeToolTip": "Views\\StudentDashboard\\StudentBooks.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAADwv0UAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAADwv0UAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-22T21:08:53.893Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T05:59:44.036Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T10:01:18.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -214,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -226,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -238,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -250,19 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "Models\\Book.cs",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Book.cs",
-              "RelativeToolTip": "Models\\Book.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAIwA0AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T05:47:22.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -271,18 +297,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-21T10:21:29.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "Models\\Student.cs",
-              "ToolTip": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\Models\\Student.cs",
-              "RelativeToolTip": "Models\\Student.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T05:59:44.036Z"
             }
           ]
         }
