@@ -35,7 +35,9 @@ namespace iLib.Controllers
         {
             try
             {
-                return _studentBookService.AddStudentBooks(userId, bookIsbn);
+                string response = _studentBookService.AddStudentBooks(userId, bookIsbn);
+                Console.WriteLine(response);
+                return response;
 
             } catch (Exception ex)
             {

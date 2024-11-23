@@ -5,7 +5,7 @@ using System.Numerics;
 
 namespace iLib.Repositories
 {
-    public class DBStudentBooksTable
+    public class DBStudentBooksTable : DBBooksTable
     {
         public List<StudentBook>? GetAllStudentBooksByStudentId(SqlConnection connection, int userId)
         {
@@ -15,8 +15,8 @@ namespace iLib.Repositories
             using SqlCommand command = new SqlCommand(storedProcedure, connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@User_Id", userId);
-            using SqlDataReader reader = command.ExecuteReader();
 
+            using SqlDataReader reader = command.ExecuteReader();
             StudentBooks = new List<StudentBook>();
             while (reader.Read())
             {
@@ -55,11 +55,12 @@ namespace iLib.Repositories
             command.Parameters.AddWithValue("@Due_Date", dueDate);
 
             int affectedRows = command.ExecuteNonQuery();
-            if (affectedRows > 0)
+            if (affectedRows == 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
+
 
         }
 
@@ -74,7 +75,7 @@ namespace iLib.Repositories
 
             using SqlDataReader reader = command.ExecuteReader();
 
-            if (reader.Read())
+            if (reader.HasRows)
             {
                 return true;
             }

@@ -4,8 +4,12 @@ using Microsoft.Data.SqlClient;
 
 namespace iLib.Services
 {
-    public class StudentBookService : BaseService
+    public class StudentBookService : BookService
     {
+        public StudentBookService()
+        {
+            _dB = new DBStudentBooksTable();
+        }
 
         public List<StudentBook> GetAllStudentBooksByStudentId(int userId)
         {
@@ -16,8 +20,7 @@ namespace iLib.Services
             }
 
             connection.Open();
-            DBStudentBooksTable dBStudentBooks = new DBStudentBooksTable();
-            List<StudentBook>? studentBooks = dBStudentBooks.GetAllStudentBooksByStudentId(connection, userId);
+            List<StudentBook>? studentBooks = ((DBStudentBooksTable)_dB).GetAllStudentBooksByStudentId(connection, userId);
             if (studentBooks == null)
             {
                 throw new Exception("studentBooks is null");
@@ -38,25 +41,34 @@ namespace iLib.Services
 
             connection.Open();
             using SqlTransaction transaction = connection.BeginTransaction();
-            DBStudentBooksTable dBStudentBooks = new DBStudentBooksTable();
-            if (dBStudentBooks.ConflictStudentBooks(connection, transaction, userId, bookIsbn))
+            try
             {
-                return "You borrowed this book already";
+                if (((DBStudentBooksTable)_dB).ConflictStudentBooks(connection, transaction, userId, bookIsbn))
+                {
+                    throw new Exception("You borrowed this book already");
+                }
+
+
+                if (!_dB.ReduceBookQuantity(connection, transaction, bookIsbn))
+                {
+                    throw new Exception("There are no copies available");
+                }
+
+                DateOnly startingDate = DateOnly.FromDateTime(DateTime.Now);
+                DateOnly dueDate = startingDate.AddMonths(1);
+                if (!((DBStudentBooksTable)_dB).AddStudentBooks(connection, transaction, userId, bookIsbn, startingDate, dueDate))
+                {
+                    return "There was internal error, the book was not borrowed";
+                }
+                transaction.Commit();
+                return "The borrowing process was successful";
+
+            }catch
+            {
+                transaction.Rollback();
+                throw;
             }
 
-            DBBooksTable dBBooks = new DBBooksTable();
-            if (!dBBooks.ReduceBookQuantity(connection, transaction, bookIsbn))
-            {
-                return "There is no copies available";
-            }
-
-            DateOnly startingDate = DateOnly.FromDateTime(DateTime.Now);
-            DateOnly dueDate = startingDate.AddMonths(1);
-            if (!dBStudentBooks.AddStudentBooks(connection, transaction, userId, bookIsbn, startingDate, dueDate))
-            {
-                return "There was internal error, the book was not borrowed";
-            }
-            return "The borrowing process was successful";
 
         }
 

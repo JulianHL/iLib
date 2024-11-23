@@ -10,14 +10,15 @@ namespace iLib.Repositories
             string storedProcedure = "[dbo].[ReduceBookQuantity]";
 
             using SqlCommand command = new SqlCommand(storedProcedure, connection, transaction);
-            command.Parameters.AddWithValue("@bookIsbn", bookIsbn);
-
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
+            
             int affectedRows = command.ExecuteNonQuery();
-            if (affectedRows > 0)
+            if (affectedRows == 0)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }
