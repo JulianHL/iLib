@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.bookClosetoDue {
+    border-color: #ffa523;
+    border-width:2px
+}
+
+.bookDue {
+    border-color: #ff3423;
+    border-width: 2px
+}

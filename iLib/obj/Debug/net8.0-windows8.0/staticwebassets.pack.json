@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\obj\\Debug\\net8.0-windows8.0\\scopedcss\\projectbundle\\iLib.bundle.scp.css",
-      "PackagePath": "staticwebassets\\iLib.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -195,6 +191,62 @@
     {
       "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\all.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\all.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\brands.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\brands.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\brands.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\brands.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\conflict-detection.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\conflict-detection.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\conflict-detection.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\conflict-detection.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\fontawesome.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fontawesome.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\fontawesome.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\regular.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\regular.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\regular.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\regular.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\solid.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\solid.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\solid.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\solid.min.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\v4-shims.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\v4-shims.js"
+    },
+    {
+      "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\fontawesome\\v4-shims.min.js",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\v4-shims.min.js"
     },
     {
       "Id": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",

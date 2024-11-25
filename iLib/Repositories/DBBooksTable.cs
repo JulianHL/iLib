@@ -5,6 +5,8 @@ namespace iLib.Repositories
     public class DBBooksTable
     {
 
+
+
         public bool ReduceBookQuantity(SqlConnection connection, SqlTransaction transaction, string bookIsbn)
         {
             string storedProcedure = "[dbo].[ReduceBookQuantity]";

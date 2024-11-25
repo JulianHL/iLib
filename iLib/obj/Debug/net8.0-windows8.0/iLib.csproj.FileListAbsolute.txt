@@ -58,9 +58,7 @@ C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\staticwebassets\msbuild.buildMultiTargeting.iLib.props
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\staticwebassets\msbuild.buildTransitive.iLib.props
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\staticwebassets.pack.json
-C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\scopedcss\bundle\iLib.styles.css
-C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\scopedcss\projectbundle\iLib.bundle.scp.css
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.csproj.Up2Date
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\iLib.dll
 C:\Users\juldh\Desktop\Desktop\Systems Development\iLibRepository\iLib\iLib\obj\Debug\net8.0-windows8.0\refint\iLib.dll

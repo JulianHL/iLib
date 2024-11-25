@@ -50,6 +50,10 @@
         "net8.0-windows8.0": {
           "targetAlias": "net8.0-windows8.0",
           "dependencies": {
+            "Font.Awesome": {
+              "target": "Package",
+              "version": "[5.15.4, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.2.2, )"

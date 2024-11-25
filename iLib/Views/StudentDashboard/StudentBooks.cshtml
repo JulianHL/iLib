@@ -1,70 +1,89 @@
 ﻿@{
-    ViewData["Title"] = "Student Book";
+    ViewData["Title"] = "My Books";
 }
 @model List<StudentBook>
 
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="StudentDashboard" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="StudentDashboard" asp-action="StudentBooks">Student Books</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 
-<table class="table">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">Isbn</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Publisher</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Language</th>
-            <th scope="col">Format</th>
-            <th scope="col">Description</th>
-            <th scope="col">Edition</th>
-            <th scope="col">Pages</th>
-            <th scope="col">Publication Date</th>
-            <th scope="col">Starting Date</th>
-            <th scope="col">Due Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var StudentBook in Model)
-        {
-
-            <tr>
-                <th scope="row">@StudentBook.BookIsbn</th>
-                <td>@StudentBook.BookTitle</td>
-                <td>@StudentBook.BookAuthor</td>
-                <td>@StudentBook.BookQuantity</td>
-                <td>@StudentBook.BookPublisher</td>
-                <td>@StudentBook.BookGenre</td>
-                <td>@StudentBook.BookLanguage</td>
-                <td>@StudentBook.BookFormat</td>
-                <td>@StudentBook.BookDescription</td>
-                <td>@StudentBook.BookEdition</td>
-                <td>@StudentBook.BookPages</td>
-                <td>@StudentBook.BookPublicationDate</td>
-                <td>@StudentBook.BookStartingDate</td>
-                <td>@StudentBook.BookDueDate</td>
-            </tr>
-
-        }
-    </tbody>
-</table>
-
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - iLib - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+@if (!Model.Any())
+{
+    <div class="text-center">
+        <h1 class="display-4">No Books Available</h1>
     </div>
-</footer>
+}
+else{
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (StudentBook studentBook in Model)
+            {
+                DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+                if (studentBook.BookDueDate >= today)
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100 bookDue">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-area="" asp-controller="StudentDashboard" asp-action="BookDetails">View Book</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (studentBook.BookDueDate >= today.AddDays(-7))
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100 bookClosetoDue">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-area="" asp-controller="StudentDashboard" asp-action="BookDetails">View Book</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100 bookClosetoDue">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-area="" asp-controller="StudentDashboard" asp-action="BookDetails">View Book</a></div>
+                            </div>
+                        </div>
+                    </div> 
+                }
+
+            }
+    </div>
+</div>
+
+}
+
 
