@@ -1,22 +1,29 @@
 ﻿using Microsoft.Data.SqlClient;
 using iLib.Models;
 using System.Transactions;
+using System.Net;
 
 namespace iLib.Repositories
 {
     public class DBBooksTable
     {
 
-        public List<Book> GetBooksByFaculty(SqlConnection connection, string faculty)
+        public List<Book>? GetBooksByFaculty(SqlConnection connection, string bookFaculty)
         {
-            List<Book> books;
+            
             string storedProcedure = "[dbo].[GetBooksByFaculty]";
 
             using SqlCommand command = new SqlCommand(storedProcedure, connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@Faculty_Name", faculty);
+            command.Parameters.AddWithValue("@Faculty_Name", bookFaculty);
+
             using SqlDataReader reader = command.ExecuteReader();
-            books = new List<Book>();
+            if (!reader.HasRows)
+            {
+                return null;
+            }
+
+            List<Book>? books = new List<Book>();
             while (reader.Read())
             {
                 books.Add(new Book
@@ -24,11 +31,47 @@ namespace iLib.Repositories
                     BookIsbn = reader.GetString(0),
                     BookTitle = reader.GetString(1),
                     BookAuthor = reader.GetString(2),
-                    BookQuantity = reader.GetInt32(3)
+                    BookQuantity = reader.GetInt32(3),
+                    BookFormat = reader.GetString(4)
                 });
             }
-
             return books;
+
+            
+        }
+
+        public Book? GetBookByIsbn(SqlConnection connection, string bookIsbn)
+        {
+            
+            string storedProcedure = "[dbo].[GetBookByIsbn]";
+
+            using SqlCommand command = new SqlCommand(storedProcedure, connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
+
+            using SqlDataReader reader = command.ExecuteReader();
+            if (!reader.Read())
+            { 
+                return null;
+            }
+
+            Book book = new Book
+            {
+                BookIsbn = reader.GetString(0),
+                BookTitle = reader.GetString(1),
+                BookAuthor = reader.GetString(2),
+                BookQuantity = reader.GetInt32(3),
+                BookPublisher = reader.GetString(4),
+                BookGenre = reader.GetString(5),
+                BookFaculty = reader.GetString(6),
+                BookLanguage = reader.GetString(7),
+                BookFormat = reader.GetString(8),
+                BookDescription = reader.IsDBNull(9) ? null : reader.GetString(9),
+                BookEdition = reader.IsDBNull(10) ? 0: reader.GetInt32(10),
+                BookPages = reader.IsDBNull(11) ? 0: reader.GetInt32(11),
+                BookPublicationDate = reader.IsDBNull(12) ? null : DateOnly.FromDateTime(reader.GetDateTime(12))
+            };
+            return book;
         }
 
         public bool ReduceBookQuantity(SqlConnection connection, SqlTransaction transaction, string bookIsbn)
@@ -44,6 +87,7 @@ namespace iLib.Repositories
             {
                 return false;
             }
+
             return true;
         }
     }

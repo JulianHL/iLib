@@ -69,8 +69,23 @@ namespace iLib.Services
                 transaction.Rollback();
                 throw;
             }
+        }
 
+        public StudentBook GetStudentBookByIsbn(int userId, string bookIsbn)
+        {
+            using SqlConnection? connection = EstablishConnection();
+            if (connection == null)
+            {
+                throw new Exception("The connection was not established, connection is null");
+            }
 
+            connection.Open();
+            StudentBook? studentBook = ((DBStudentBooksTable)_dB).GetStudentBookByIsbn(connection,userId, bookIsbn);
+            if (studentBook == null)
+            {
+                throw new Exception("books is null");
+            }
+            return studentBook;
         }
 
     }

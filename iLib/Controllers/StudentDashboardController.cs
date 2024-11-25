@@ -7,18 +7,20 @@ namespace iLib.Controllers
 {
     public class StudentDashboardController : Controller
     {
-        StudentBookService _studentBookService;
+        private StudentBookService _studentBookService;
+        private StudentBookService _bookService;
 
         public StudentDashboardController()
         {
             _studentBookService = new StudentBookService();
+            _bookService = new StudentBookService();
         }
 
         public IActionResult Index()
         {
             try
             {
-                return View(_studentBookService.GetBooksByFaculty("Science"));
+                return View(_bookService.GetBooksByFaculty("Science"));
             }
             catch (Exception ex)
             {
@@ -41,18 +43,44 @@ namespace iLib.Controllers
             }
         }
 
-        public string AddStudentBook(int userId, string bookIsbn)
+        public IActionResult AddStudentBook(int userId, string bookIsbn)
         {
             try
             {
-                string response = _studentBookService.AddStudentBooks(userId, bookIsbn);
-                Console.WriteLine(response);
-                return response;
+                _studentBookService.AddStudentBooks(userId, bookIsbn);
+                return RedirectToAction("Index");
 
             } catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
+        public IActionResult BookDetails(string bookIsbn)
+        {
+            try
+            {
+                return View(_bookService.GetBookByIsbn(bookIsbn));
+
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return RedirectToAction("Index");
+            }
+        }
+
+        public IActionResult StudentBookDetails(int userId, string bookIsbn)
+        {
+            try
+            {
+                return View(_studentBookService.GetStudentBookByIsbn(userId, bookIsbn));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return RedirectToAction("Index");
             }
         }
     }

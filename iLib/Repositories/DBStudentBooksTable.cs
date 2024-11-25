@@ -2,6 +2,7 @@
 using iLib.Models;
 using Microsoft.Data.SqlClient;
 using System.Numerics;
+using System.Windows.Input;
 
 namespace iLib.Repositories
 {
@@ -9,7 +10,6 @@ namespace iLib.Repositories
     {
         public List<StudentBook>? GetAllStudentBooksByStudentId(SqlConnection connection, int userId)
         {
-            List<StudentBook> StudentBooks;
             string storedProcedure = "[dbo].[GetStudentBooks]";
 
             using SqlCommand command = new SqlCommand(storedProcedure, connection);
@@ -17,7 +17,12 @@ namespace iLib.Repositories
             command.Parameters.AddWithValue("@User_Id", userId);
 
             using SqlDataReader reader = command.ExecuteReader();
-            StudentBooks = new List<StudentBook>();
+            if (!reader.HasRows)
+            {
+                return null;
+            }
+
+            List<StudentBook> StudentBooks = new List<StudentBook>();
             while (reader.Read())
             {
                 StudentBooks.Add(new StudentBook
@@ -25,6 +30,7 @@ namespace iLib.Repositories
                     BookIsbn = reader.GetString(0),
                     BookTitle = reader.GetString(1),
                     BookAuthor = reader.GetString(2),
+                    BookFormat = reader.GetString(3),
 
                 });
             }
@@ -48,6 +54,7 @@ namespace iLib.Repositories
             {
                 return false;
             }
+
             return true;
 
 
@@ -63,14 +70,51 @@ namespace iLib.Repositories
             command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
 
             using SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if (!reader.HasRows)
             {
-                return true;
+                return false;
             }
-            return false;
+
+            return true;
 
         }
-        
+
+        public StudentBook? GetStudentBookByIsbn(SqlConnection connection, int userId, string bookIsbn)
+        {
+
+            string storedProcedure = "[dbo].[GetStudentBookByIsbn]";
+
+            using SqlCommand command = new SqlCommand(storedProcedure, connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@User_Id", userId);
+            command.Parameters.AddWithValue("@Book_Isbn", bookIsbn);
+
+            using SqlDataReader reader = command.ExecuteReader();
+            if (!reader.Read())
+            {
+                return null;
+            }
+
+            StudentBook studentbook = new StudentBook
+            {
+                BookIsbn = reader.GetString(0),
+                BookTitle = reader.GetString(1),
+                BookAuthor = reader.GetString(2),
+                BookQuantity = reader.GetInt32(3),
+                BookPublisher = reader.GetString(4),
+                BookGenre = reader.GetString(5),
+                BookFaculty = reader.GetString(6),
+                BookLanguage = reader.GetString(7),
+                BookFormat = reader.GetString(8),
+                BookDescription = reader.IsDBNull(9) ? null :  reader.GetString(9),
+                BookEdition = reader.IsDBNull(10) ? 0 :  reader.GetInt32(10),
+                BookPages = reader.IsDBNull(11) ? 0 : reader.GetInt32(11),
+                BookPublicationDate = reader.IsDBNull(12) ? null : DateOnly.FromDateTime(reader.GetDateTime(12)),
+                BookStartingDate = DateOnly.FromDateTime(reader.GetDateTime(13)),
+                BookDueDate = DateOnly.FromDateTime(reader.GetDateTime(14))
+            };
+            return studentbook;
+        }
+
     }
 }
