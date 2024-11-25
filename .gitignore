@@ -1,2 +1,6 @@
 .json
 /iLib/.vs/iLib/FileContentIndex
+/iLib/obj/Debug
+/Services/obj/Debug/net8.0
+/iLib/obj/Debug
+/Repositories/obj/Debug
