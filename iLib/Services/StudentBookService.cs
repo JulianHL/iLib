@@ -37,7 +37,7 @@ namespace iLib.Services
             using SqlConnection? connection = EstablishConnection();
             if (connection == null)
             {
-                return "The connection was not established, connection is null";
+                throw new Exception("The connection was not established, connection is null");
             }
 
             connection.Open();

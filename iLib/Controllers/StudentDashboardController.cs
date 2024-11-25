@@ -16,7 +16,16 @@ namespace iLib.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                return View(_studentBookService.GetBooksByFaculty("Science"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                List<Book> emptyList = new List<Book>();
+                return View(emptyList);
+            }
         }
 
         public IActionResult StudentBooks(int userId)
