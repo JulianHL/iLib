@@ -11,8 +11,9 @@
     </div>
 }
 else{
-<div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<div class="d-flex align-content-center">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             @foreach (StudentBook studentBook in Model)
             {
                 DateOnly today = DateOnly.FromDateTime(DateTime.Now);
@@ -61,7 +62,7 @@ else{
                 else
                 {
                     <div class="col mb-5">
-                        <div class="card h-100 bookClosetoDue">
+                        <div class="card h-100">
                             <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -81,6 +82,7 @@ else{
                 }
 
             }
+        </div>
     </div>
 </div>
 

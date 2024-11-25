@@ -1,11 +1,52 @@
 ﻿@{
     ViewData["Title"] = "Student Dashboard";
 }
+@model List<Book>
 
 
-<div class="d-flex align-content-center">
-    <a class="btn btn-outline-success" asp-area="" asp-controller="StudentDashboard" asp-action="AddStudentBook" asp-route-userId="4000" asp-route-bookIsbn="978-1856698961">Borrow</a>
-</div>
+@if (!Model.Any())
+{
+    <div class="text-center">
+        <h1 class="display-4">No Books Available</h1>
+    </div>
+}
+else
+{
+    <div class="d-flex align-content-center">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @foreach (Book book in Model)
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@book.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@book.BookAuthor</h6>
+                                    <p>ISBN: @book.BookIsbn</p>
+                                    <p>Copies: @book.BookQuantity</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                @if(book.BookQuantity<=0){
+                                    <div class="text-center"><a class="btn btn-outline-warning mt-auto">Reserve</a></div>
+                                }else
+                                {
+                                    <div class="text-center"><a class="btn btn-outline-success mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="AddStudentBook" asp-route-userId="4000" asp-route-bookIsbn="@book.BookIsbn">Borrow</a></div>
+                                }
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-area="" asp-controller="StudentDashboard" asp-action="BookDetails">View Book</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
 
 
 
