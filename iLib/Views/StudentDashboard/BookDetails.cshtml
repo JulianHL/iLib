@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Book Details";
+}
+@model Book
+
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">ISBN: @Model.BookIsbn</div>
+                <div class="small mb-1">@Model.BookFormat</div>
+                @if(Model.BookFormat.Equals("Physical")){
+                    <div class="small mb-1">Copies: @Model.BookQuantity</div>
+                }
+                <h1 class="display-5 fw-bolder">@Model.BookTitle</h1>
+                @if (Model.BookEdition > 0){
+                    <h3 class="fw-bolder">Edition @Model.BookEdition</h3>
+                }
+                <div class="fs-5">
+                    <span>@Model.BookAuthor</span>
+                    @if(Model.BookPublicationDate != null){
+                        <span>@Model.BookPublicationDate</span>
+                    }
+                </div>
+                <div class="small mb-5">@Model.BookPublisher</div>
+                @if (!string.IsNullOrEmpty(Model.BookDescription))
+                {
+                    <p class="lead">@Model.BookDescription</p>
+                }
+                <div class="small mb-5">
+                    <ul>
+                        <li><span>Gernre: @Model.BookGenre</span></li>
+                        <li><span>Faculty: @Model.BookFaculty</span></li>
+                        <li><span>Language: @Model.BookLanguage</span></li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    @if (Model.BookFormat.Equals("Digital"))
+                    {
+                        <div class="text-center"><a class="btn btn-outline-info mt-auto m-3">Download</a></div>
+                    }
+                    else if (Model.BookQuantity <= 0)
+                    {
+                        <div class="text-center"><a class="btn btn-outline-warning mt-auto m-3">Reserve</a></div>
+                    }
+                    else
+                    {
+                        <div class="text-center"><a class="btn btn-outline-success mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="AddStudentBook" asp-route-userId="4000" asp-route-bookIsbn="@Model.BookIsbn">Borrow</a></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
