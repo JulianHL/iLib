@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\iLib.csproj": {}
+    "C:\\Users\\sh1va\\OneDrive\\Desktop\\System Development\\iLIB\\iLib\\iLib\\iLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\iLib.csproj": {
+    "C:\\Users\\sh1va\\OneDrive\\Desktop\\System Development\\iLIB\\iLib\\iLib\\iLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\iLib.csproj",
+        "projectUniqueName": "C:\\Users\\sh1va\\OneDrive\\Desktop\\System Development\\iLIB\\iLib\\iLib\\iLib.csproj",
         "projectName": "iLib",
-        "projectPath": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\iLib.csproj",
-        "packagesPath": "C:\\Users\\juldh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juldh\\Desktop\\Desktop\\Systems Development\\iLibRepository\\iLib\\iLib\\obj\\",
+        "projectPath": "C:\\Users\\sh1va\\OneDrive\\Desktop\\System Development\\iLIB\\iLib\\iLib\\iLib.csproj",
+        "packagesPath": "C:\\Users\\sh1va\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sh1va\\OneDrive\\Desktop\\System Development\\iLIB\\iLib\\iLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\juldh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sh1va\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,6 +49,26 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -68,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
