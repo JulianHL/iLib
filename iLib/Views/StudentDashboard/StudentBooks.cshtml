@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "My Books";
+}
+@model List<StudentBook>
+
+
+@if (!Model.Any())
+{
+    <div class="text-center">
+        <h1 class="display-4">No Books Available</h1>
+    </div>
+}
+else{
+<div class="d-flex align-content-center">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (StudentBook studentBook in Model)
+            {
+                DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+                if (studentBook.BookDueDate >= today)
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100 bookDue">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="StudentBookDetails" asp-route-userId="4000" asp-route-bookIsbn="@studentBook.BookIsbn">View Book</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (studentBook.BookDueDate >= today.AddDays(-7))
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100 bookClosetoDue">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="StudentBookDetails" asp-route-userId="4000" asp-route-bookIsbn="@studentBook.BookIsbn">View Book</a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@studentBook.BookTitle</h5>
+                                    <!-- Product price-->
+                                    <h6>@studentBook.BookAuthor</h6>
+                                    <p>ISBN: @studentBook.BookIsbn</p>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="StudentBookDetails" asp-route-userId="4000" asp-route-bookIsbn="@studentBook.BookIsbn">View Book</a></div>
+                            </div>
+                        </div>
+                    </div> 
+                }
+
+            }
+        </div>
+    </div>
+</div>
+
+}
+
+
