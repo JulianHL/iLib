@@ -43,7 +43,7 @@ namespace iLib.Services
             {
                 if (!((DBLibrarianBooksTable)_dB).AddBook(connection, transaction, book))
                 {
-                    return "There was an internal error, the book was not added";
+                    throw new Exception("There was an internal error, the book was not added");
                 }
 
                 transaction.Commit();

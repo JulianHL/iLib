@@ -43,6 +43,7 @@ namespace iLib.Repositories
 
             using SqlCommand command = new SqlCommand(storedProcedure, connection, transaction);
             command.CommandType = System.Data.CommandType.StoredProcedure;
+
             command.Parameters.AddWithValue("@Book_Isbn", book.BookIsbn);
             command.Parameters.AddWithValue("@Book_Title", book.BookTitle);
             command.Parameters.AddWithValue("@Book_Author", book.BookAuthor);
@@ -56,17 +57,8 @@ namespace iLib.Repositories
             command.Parameters.AddWithValue("@Book_Pages", (object?)book.BookPages ?? DBNull.Value);
             command.Parameters.AddWithValue("@Book_PublicationDate", (object?)book.BookPublicationDate ?? DBNull.Value);
 
-            var returnParameter = new SqlParameter
-            {
-                ParameterName = "@ReturnValue",
-                SqlDbType = SqlDbType.Int,
-                Direction = ParameterDirection.ReturnValue
-            };
-            command.Parameters.Add(returnParameter);
-
             int affectedRows = command.ExecuteNonQuery();
-            int returnValue = (int)returnParameter.Value;
-            return affectedRows > 0;
+            return affectedRows != 0;
         }
 
         public bool UpdateBook(SqlConnection connection, SqlTransaction transaction, Book book)

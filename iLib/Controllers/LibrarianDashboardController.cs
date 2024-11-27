@@ -49,23 +49,23 @@ namespace iLib.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook(Book book)
+        public IActionResult AddBookToDB(Book book)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    string response = _librarianBookService.AddBook(book);
-                    TempData["Message"] = response;
-                    return RedirectToAction("AllBooks");
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                    return View(book);
-                }
+                return View(book);
             }
-            return View(book);
+            try
+            {
+                string response = _librarianBookService.AddBook(book);
+                TempData["Message"] = response;
+                return RedirectToAction("AllBooks");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(book);
+            }
         }
 
         [HttpPost]
