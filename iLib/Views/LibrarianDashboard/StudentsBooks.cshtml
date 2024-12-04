@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Borrowed Books";
+}
+
+@model List<StudentBook>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Starting Date</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (StudentBook studentBook in Model)
+            {
+                <tr>
+                    <th scope="row">@studentBook.BookIsbn</th>
+                    <td>@studentBook.BookTitle</td>
+                    <td>@studentBook.BookAuthor</td>
+                    <td>@(studentBook.BookStudent.StudentFirstName + " " + studentBook.BookStudent.StudentLastName)</td>
+                    <td>@studentBook.BookStartingDate.ToString("yyyy-MM-dd")</td>
+                    <td>@studentBook.BookDueDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @{
+                            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+                            string status = studentBook.BookDueDate < today ? "Overdue" : "Active";
+                            string statusClass = status == "Overdue" ? "text-danger" : "text-success";
+                        }
+                        <span class="@statusClass">@status</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2024 - iLib - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>

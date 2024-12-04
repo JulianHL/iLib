@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Librarian Dashboard";
+}
+
+
+<div class="container">
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Language</th>
+                <th scope="col">Format</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <th scope="row">@book.BookIsbn</th>
+                    <td>@book.BookTitle</td>
+                    <td>@book.BookAuthor</td>
+                    <td>@book.BookQuantity</td>
+                    <td>@book.BookPublisher</td>
+                    <td>@book.BookGenre</td>
+                    <td>@book.BookLanguage</td>
+                    <td>@book.BookFormat</td>
+                    <td>@book.BookEdition</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editBook('@book.BookIsbn')">Edit</button>
+                        <button class="btn btn-sm btn-info" onclick="viewDetails('@book.BookIsbn')">Details</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
