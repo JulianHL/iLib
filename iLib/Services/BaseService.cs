@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace iLib.Services
 {
@@ -9,7 +10,7 @@ namespace iLib.Services
         {
             try
             {
-                string ConnectionString = "Data Source=SHIVANG;Initial Catalog=iLib;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+                string ConnectionString = "Data Source =.\\MSSQLSERVER01;Initial Catalog=iLib;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
                 return new SqlConnection(ConnectionString);
             }catch (Exception ex)
             {
