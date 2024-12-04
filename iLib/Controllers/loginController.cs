@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using iLib.Services;
 using iLib.Models;
-using iLib.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
+
 
 namespace iLib.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly AppDbContext _context;
+        
         private readonly ILogger<LoginController> _logger;
+        UserService _userService;
 
-        public LoginController(AppDbContext context, ILogger<LoginController> logger)
+        public LoginController(ILogger<LoginController> logger)
         {
-            _context = context;
+            _userService = new UserService();
             _logger = logger;
         }
 
@@ -24,28 +23,26 @@ namespace iLib.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string Username, string Password)
+        public IActionResult UserValidation(string username, string password)
         {
-            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            try
             {
-                ViewBag.ErrorMessage = "Username and password are required.";
-                return View();
+                User user = _userService.validateUser(username, password);
+                HttpContext.Session.SetString("UserId", user.UserId.ToString());
+                HttpContext.Session.SetString("UserName", user.UserName);
+                if (user.UserRole.Equals("Admin"))
+                {
+                    return RedirectToAction("Index", "AdminDashboard");
+                }
+                if (user.UserRole.Equals("Librarian"))
+                {
+                    return RedirectToAction("Index", "LibrarianDashboard");
+                }
+                return RedirectToAction("Index", "StudentDashboard");
             }
-
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.User_UserName == Username && u.User_Password == Password);
-
-            if (user != null)
+            catch (Exception ex)
             {
-                HttpContext.Session.SetString("UserId", user.User_Id.ToString());
-                HttpContext.Session.SetString("UserName", user.User_UserName);
-                HttpContext.Session.SetInt32("UserRole", user.User_Role);
-
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.ErrorMessage = "Invalid username or password.";
-                return View();
+                return RedirectToAction("Login");
             }
         }
     }

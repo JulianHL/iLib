@@ -1,4 +1,4 @@
-namespace iLib.Models
+﻿namespace iLib.Models
 {
     public class ErrorViewModel
     {
