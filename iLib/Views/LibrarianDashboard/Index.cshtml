@@ -1,63 +1,44 @@
 ﻿@{
     ViewData["Title"] = "Librarian Dashboard";
 }
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="LibrarianDashboard" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="LibrarianDashboard" asp-action="AllBooks">All Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="LibrarianDashboard" asp-action="BorrowedBooks">Borrowed Books</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
 
 <div class="container">
-    <div class="row mb-4">
-        <div class="col">
-            <h2>Quick Actions</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Add New Book</h5>
-                    <p class="card-text">Add a new book to the library inventory</p>
-                    <a class="btn btn-primary" asp-action="AddBook">Add New Book</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">View Books</h5>
-                    <p class="card-text">View and manage all books in the library</p>
-                    <a class="btn btn-primary" asp-action="AllBooks">View Books</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Borrowed Books</h5>
-                    <p class="card-text">Track currently borrowed books</p>
-                    <a class="btn btn-primary" asp-action="BorrowedBooks">View Borrowed</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - iLib - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
-</footer>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Language</th>
+                <th scope="col">Format</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <th scope="row">@book.BookIsbn</th>
+                    <td>@book.BookTitle</td>
+                    <td>@book.BookAuthor</td>
+                    <td>@book.BookQuantity</td>
+                    <td>@book.BookPublisher</td>
+                    <td>@book.BookGenre</td>
+                    <td>@book.BookLanguage</td>
+                    <td>@book.BookFormat</td>
+                    <td>@book.BookEdition</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editBook('@book.BookIsbn')">Edit</button>
+                        <button class="btn btn-sm btn-info" onclick="viewDetails('@book.BookIsbn')">Details</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

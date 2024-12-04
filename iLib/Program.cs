@@ -22,7 +22,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=StudentDashboard}/{action=Index}/{id?}");
+    pattern: "{controller=LibrarianDashboard}/{action=Index}/{id?}");
 
 /*app.MapControllerRoute(
     name: "student",

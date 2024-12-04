@@ -6,36 +6,25 @@ namespace iLib.Controllers
 {
     public class LibrarianDashboardController : Controller
     {
-        private readonly LibrarianBookService _librarianBookService;
+        private readonly StudentBookService _studentBookService;
+        private readonly BookService _bookService;
 
         public LibrarianDashboardController()
         {
-            _librarianBookService = new LibrarianBookService();
+            _studentBookService = new StudentBookService();
+            _bookService = new BookService();
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_studentBookService.GetAllBooks());
         }
 
-        public IActionResult AllBooks()
+        public IActionResult StudentsBooks()
         {
             try
             {
-                return View(_librarianBookService.GetAllBooks());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return View("Index");
-            }
-        }
-
-        public IActionResult BorrowedBooks()
-        {
-            try
-            {
-                return View(_librarianBookService.GetBorrowedBooks());
+                return View(_studentBookService.GetAllStudentBooks());
             }
             catch (Exception ex)
             {
@@ -49,22 +38,22 @@ namespace iLib.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBookToDB(Book book)
+        public IActionResult AddBookAction(Book book)
         {
             if (!ModelState.IsValid)
             {
-                return View(book);
+                return RedirectToAction("AddBook");
             }
             try
             {
-                string response = _librarianBookService.AddBook(book);
+                string response = _bookService.AddBook(book);
                 TempData["Message"] = response;
-                return RedirectToAction("AllBooks");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
-                return View(book);
+                return RedirectToAction("AddBook");
             }
         }
 
@@ -73,7 +62,7 @@ namespace iLib.Controllers
         {
             try
             {
-                string response = _librarianBookService.UpdateBook(book);
+                string response = _studentBookService.UpdateBook(book);
                 Console.WriteLine(response);
                 return response;
             }

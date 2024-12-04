@@ -3,28 +3,11 @@
     ViewData["Title"] = "Add New Book";
 }
 
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-controller="LibrarianDashboard" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-controller="LibrarianDashboard" asp-action="AllBooks">All Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-controller="LibrarianDashboard" asp-action="BorrowedBooks">Borrowed Books</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 
 <div class="container">
     <h2 class="mb-4">Add New Book</h2>
 
-    <form asp-controller="LibrarianDashboard" asp-action="AddBookToDB" method="post">
+    <form asp-controller="LibrarianDashboard" asp-action="AddBookAction" method="post">
         <div class="row mb-3">
             <div class="col-md-6">
                 <label asp-for="BookIsbn" class="form-label">ISBN</label>
@@ -46,6 +29,23 @@
                 <input asp-for="BookQuantity" type="number" class="form-control" required>
             </div>
         </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="BookFaculty" class="form-label">Faculty</label>
+                <select asp-for="BookFaculty" class="form-select" required>
+                    <option value="">Select Faculty</option>
+                    <option value="Science">Science</option>
+                    <option value="Art">Art</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Economics">Economics</option>
+                    <option value="Sociology">Sociology</option>
+
+                </select>
+            </div>
+
+
 
         <div class="row mb-3">
             <div class="col-md-6">
@@ -136,7 +136,7 @@
        
         <div class="mt-4">
             <button type="submit" class="btn btn-primary">Add Book</button>
-            <a asp-action="AllBooks" class="btn btn-secondary">Cancel</a>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div> 

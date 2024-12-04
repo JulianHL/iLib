@@ -38,6 +38,36 @@ namespace iLib.Repositories
 
         }
 
+        public List<StudentBook>? GetAllStudentBooks(SqlConnection connection)
+        {
+            List<StudentBook> borrowedBooks;
+            string storedProcedure = "[dbo].[GetAllStudentBooks]";
+
+            using SqlCommand command = new SqlCommand(storedProcedure, connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            using SqlDataReader reader = command.ExecuteReader();
+            borrowedBooks = new List<StudentBook>();
+            while (reader.Read())
+            {
+                borrowedBooks.Add(new StudentBook
+                {
+
+                    BookStudent = new Student
+                    {
+                        StudentFirstName = reader.GetString(0),
+                        StudentLastName = reader.GetString(1),
+                    },
+                    BookIsbn = reader.GetString(2),
+                    BookTitle = reader.GetString(3),
+                    BookAuthor = reader.GetString(4),
+                    BookStartingDate = DateOnly.FromDateTime(reader.GetDateTime(5)),
+                    BookDueDate = DateOnly.FromDateTime(reader.GetDateTime(6))
+                });
+            }
+            return borrowedBooks;
+        }
+
         public bool AddStudentBooks(SqlConnection connection, SqlTransaction transaction, int userId, string bookIsbn, DateOnly startingDate, DateOnly dueDate)
         {
             string storedProcedure = "[dbo].[AddStudentBooks]";
