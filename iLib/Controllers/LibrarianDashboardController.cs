@@ -4,27 +4,31 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace iLib.Controllers
 {
-    public class LibrarianDashboardController : Controller
+    public class LibrarianDashboardController : BaseController
     {
         private readonly StudentBookService _studentBookService;
         private readonly BookService _bookService;
+        private readonly UserService _userService;
 
         public LibrarianDashboardController()
         {
             _studentBookService = new StudentBookService();
             _bookService = new BookService();
+            _userService = new UserService();
         }
 
         public IActionResult Index()
         {
-            return View(_studentBookService.GetAllBooks());
+
+            return Router("Librarian").Invoke(_studentBookService.GetAllBooks());
         }
 
         public IActionResult StudentsBooks()
         {
             try
             {
-                return View(_studentBookService.GetAllStudentBooks());
+
+                return Router("Librarian").Invoke(_studentBookService.GetAllStudentBooks());
             }
             catch (Exception ex)
             {
@@ -32,6 +36,7 @@ namespace iLib.Controllers
                 return View("Index");
             }
         }
+
         public IActionResult AddBook()
         {
             return View();
@@ -42,6 +47,14 @@ namespace iLib.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Func<object, IActionResult> router = Router("Student");
+
+                string? username = HttpContext.Session.GetString("UserName");
+                if (username == null)
+                {
+                    return router.Invoke("");
+                }
+
                 return RedirectToAction("AddBook");
             }
             try
@@ -62,6 +75,7 @@ namespace iLib.Controllers
         {
             try
             {
+
                 string response = _studentBookService.UpdateBook(book);
                 Console.WriteLine(response);
                 return response;

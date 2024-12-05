@@ -8,13 +8,12 @@ namespace iLib.Controllers
     public class LoginController : Controller
     {
         
-        private readonly ILogger<LoginController> _logger;
+
         UserService _userService;
 
         public LoginController(ILogger<LoginController> logger)
         {
             _userService = new UserService();
-            _logger = logger;
         }
 
         public IActionResult Login()
@@ -27,8 +26,7 @@ namespace iLib.Controllers
         {
             try
             {
-                User user = _userService.validateUser(username, password);
-                HttpContext.Session.SetString("UserId", user.UserId.ToString());
+                User user = _userService.ValidateUser(username, password);
                 HttpContext.Session.SetString("UserName", user.UserName);
                 if (user.UserRole.Equals("Admin"))
                 {

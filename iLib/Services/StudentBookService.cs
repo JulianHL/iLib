@@ -1,6 +1,6 @@
 ﻿using iLib.Models;
 using iLib.Repositories;
-using Microsoft.AspNetCore.Mvc;
+using iLib.Exceptions;
 using Microsoft.Data.SqlClient;
 
 namespace iLib.Services
@@ -32,6 +32,11 @@ namespace iLib.Services
 
         public List<StudentBook> GetAllStudentBooksByStudentId(int userId)
         {
+            if (userId == 0)
+            {
+                throw new Exception("Invalid user id");
+            }
+
             using SqlConnection? connection = EstablishConnection();
             if (connection == null)
             {
@@ -45,13 +50,18 @@ namespace iLib.Services
                 throw new Exception("studentBooks is null");
             }
 
-            
+
             return studentBooks;
 
         }
 
         public string AddStudentBooks(int userId, string bookIsbn)
         {
+            if (userId == 0)
+            {
+                throw new Exception("Invalid user id");
+            }
+
             using SqlConnection? connection = EstablishConnection();
             if (connection == null)
             {
@@ -64,25 +74,26 @@ namespace iLib.Services
             {
                 if (((DBStudentBooksTable)_dB).ConflictStudentBooks(connection, transaction, userId, bookIsbn))
                 {
-                    throw new Exception("You borrowed this book already");
+                    throw new ConflictException("The book is already borrowed");
                 }
 
 
                 if (!_dB.ReduceBookQuantity(connection, transaction, bookIsbn))
                 {
-                    throw new Exception("There are no copies available");
+                    throw new ConflictException("There are no copies available");
                 }
 
                 DateOnly startingDate = DateOnly.FromDateTime(DateTime.Now);
                 DateOnly dueDate = startingDate.AddMonths(1);
                 if (!((DBStudentBooksTable)_dB).AddStudentBooks(connection, transaction, userId, bookIsbn, startingDate, dueDate))
                 {
-                    return "There was internal error, the book was not borrowed";
+                    throw new Exception("The book was not borrowed");
                 }
                 transaction.Commit();
-                return "The borrowing process was successful";
+                return "The book was successfully borrowed";
 
-            }catch
+            }
+            catch
             {
                 transaction.Rollback();
                 throw;
@@ -91,6 +102,11 @@ namespace iLib.Services
 
         public StudentBook GetStudentBookByIsbn(int userId, string bookIsbn)
         {
+            if (userId == 0)
+            {
+                throw new Exception("Invalid user id");
+            }
+
             using SqlConnection? connection = EstablishConnection();
             if (connection == null)
             {
@@ -98,13 +114,14 @@ namespace iLib.Services
             }
 
             connection.Open();
-            StudentBook? studentBook = ((DBStudentBooksTable)_dB).GetStudentBookByIsbn(connection,userId, bookIsbn);
+            StudentBook? studentBook = ((DBStudentBooksTable)_dB).GetStudentBookByIsbn(connection, userId, bookIsbn);
             if (studentBook == null)
             {
                 throw new Exception("books is null");
             }
             return studentBook;
         }
+
 
     }
 }

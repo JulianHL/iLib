@@ -6,12 +6,12 @@ namespace iLib.Services
 {
     public class UserService : BaseService
     {
-        DBUserTable _dB;
+        protected DBUsersTable _dB;
         public UserService()
         {
-            _dB = new DBUserTable();
+            _dB = new DBUsersTable();
         }
-        public User validateUser(string username, string password)
+        public User ValidateUser(string? username, string? password)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -23,8 +23,9 @@ namespace iLib.Services
             {
                 throw new Exception("The connection was not established, connection is null");
             }
+
             connection.Open();
-            User? user = _dB.validateUser(connection, username, password);
+            User? user = _dB.ValidateUser(connection, username, password);
 
             if (user == null)
             {
@@ -32,6 +33,48 @@ namespace iLib.Services
             }
 
             return user;
+        }
+        
+        public int GetUserIdByUserName(string username)
+        {
+
+            using SqlConnection? connection = EstablishConnection();
+            if (connection == null)
+            {
+                throw new Exception("The connection was not established, connection is null");
+            }
+
+            connection.Open();
+            int userId = _dB.getUserIdByUserName(connection, username);
+
+            if (userId == 0)
+            {
+                throw new Exception("User not found");
+            }
+
+            return userId;
+
+        }
+
+        public string GetUserRoleByUserName(string username)
+        {
+
+            using SqlConnection? connection = EstablishConnection();
+            if (connection == null)
+            {
+                throw new Exception("The connection was not established, connection is null");
+            }
+
+            connection.Open();
+            string? userRole = _dB.getUserRoleByUserName(connection, username);
+
+            if (userRole == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            return userRole;
+
         }
     }
 }

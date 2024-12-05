@@ -12,6 +12,7 @@
 }
 else
 {
+    <div id="alert-container" class="m-5"></div>
     <div class="d-flex align-content-center">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -29,7 +30,7 @@ else
                                     <div class="small mb-1">ISBN: @book.BookIsbn</div>
                                     @if (book.BookFormat.Equals("Physical"))
                                     {
-                                        <div class="small mb-1">Copies: @book.BookQuantity</div>  
+                                        <div class="small mb-1">Copies: @book.BookQuantity</div>
                                     }
                                 </div>
                             </div>
@@ -38,11 +39,14 @@ else
                                 @if (book.BookFormat.Equals("Digital"))
                                 {
                                     <div class="text-center"><a class="btn btn-outline-info mt-auto m-3">Download</a></div>
-                                }else if(book.BookQuantity<=0){
-                                    <div class="text-center"><a class="btn btn-outline-warning mt-auto m-3">Reserve</a></div>
-                                }else
+                                }
+                                else if (book.BookQuantity <= 0)
                                 {
-                                    <div class="text-center"><a class="btn btn-outline-success mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="AddStudentBook" asp-route-userId="4000" asp-route-bookIsbn="@book.BookIsbn">Borrow</a></div>
+                                    <div class="text-center"><a class="btn btn-outline-warning mt-auto m-3">Reserve</a></div>
+                                }
+                                else
+                                {
+                                    <div class="text-center"><button class="btn btn-outline-success mt-auto m-3" onclick="addStudentBook('@book.BookIsbn')">Borrow</button></div>
                                 }
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto m-3" asp-area="" asp-controller="StudentDashboard" asp-action="BookDetails" asp-route-bookIsbn="@book.BookIsbn">View Book</a></div>
                             </div>
