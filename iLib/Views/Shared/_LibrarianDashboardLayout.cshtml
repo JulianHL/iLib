@@ -21,6 +21,14 @@
                     <li class="nav-item"><a class="nav-link active" asp-area="" asp-controller="LibrarianDashboard" asp-action="AddBook">Add New Book</a></li>
 
                 </ul>
+                @if (Context.Session.GetString("UserId") != null)
+                {
+                    <a class="btn btn-outline-danger" href="@Url.Action("Logout", "Login")">Logout</a>
+                }
+                else
+                {
+                    <a class="btn btn-outline-primary" href="@Url.Action("Login", "Login")">Login</a>
+                }
             </div>
         </div>
     </nav>

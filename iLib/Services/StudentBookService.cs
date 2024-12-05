@@ -106,5 +106,24 @@ namespace iLib.Services
             return studentBook;
         }
 
+        public List<StudentBook>? SearchStudentBooks(string searchTerm)
+        {
+            using SqlConnection? connection = EstablishConnection();
+            if (connection == null)
+            {
+                throw new Exception("The connection was not established, connection is null");
+            }
+
+            connection.Open();;
+            DBStudentBooksTable dbStudentBooksTable = (DBStudentBooksTable)_dB;
+            List<StudentBook>? studentBooks = dbStudentBooksTable.SearchStudentBooks(connection, searchTerm);
+            if (studentBooks == null)
+            {
+                throw new Exception("No student books found for the given search term");
+            }
+
+            return studentBooks;
+        }
+
     }
 }

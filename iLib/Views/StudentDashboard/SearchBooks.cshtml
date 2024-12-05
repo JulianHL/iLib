@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Search Books";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Search for Books</h2>
+
+    <form method="get" asp-action="SearchBooks">
+        <div class="form-group">
+            <label for="searchTerm">Search</label>
+            <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Enter book title, author, or ISBN">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Search</button>
+    </form>
+
+    @if (ViewBag.Books != null && ViewBag.Books.Count > 0)
+    {
+        <h3 class="mt-5">Search Results</h3>
+        <div class="row">
+            @foreach (var book in ViewBag.Books)
+            {
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://dummyimage.com/150x200/dee2e6/6c757d.jpg" alt="Book image" />
+                        <div class="card-body">
+                            <h5 class="card-title">@book.BookTitle</h5>
+                            <p class="card-text">@book.BookAuthor</p>
+                            <p class="card-text">ISBN: @book.BookIsbn</p>
+                            <p class="card-text">Copies: @book.BookQuantity</p>
+                            <a href="#" class="btn btn-success">Borrow</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="mt-3">No books found matching your search term.</p>
+    }
+</div>
