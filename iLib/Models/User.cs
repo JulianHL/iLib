@@ -1,5 +1,7 @@
 
-﻿namespace iLib.Models
+using System.Numerics;
+
+namespace iLib.Models
 {
  
     public class User
@@ -9,7 +11,7 @@
         public string UserPassword { get; set; }
         public string UserRole { get; set; }
         public string? UserEmail { get; set; }
-        public int? UserPhoneNumber { get; set; }
+        public long UserPhoneNumber { get; set; }
     }
 }
 

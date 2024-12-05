@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model iLib.Models.Librarian
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<h2>Add User</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<form asp-controller="Admin" asp-action="AddUser" method="post">
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input asp-for="UserName" class="form-control" id="userName" placeholder="Enter username" required />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input asp-for="UserPassword" type="password" class="form-control" id="userPassword" placeholder="Enter password" required />
+        <span asp-validation-for="UserPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="userEmail">Email (Optional)</label>
+        <input asp-for="UserEmail" type="email" class="form-control" id="userEmail" placeholder="Enter email" />
+        <span asp-validation-for="UserEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="userPhoneNumber">Phone Number (Optional)</label>
+        <input asp-for="UserPhoneNumber" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StudentFirstName">Phone Number (Optional)</label>
+        <input asp-for="LibrarianFirstName" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StudentLastName">Phone Number (Optional)</label>
+        <input asp-for="LibrarianLastName" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Add User</button>
+</form>
