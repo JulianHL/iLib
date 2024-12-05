@@ -18,8 +18,17 @@ namespace iLib.Controllers
             return View();
         }
 
-        public IActionResult AddStudent(Student student)
+        public IActionResult AddStudent()
         {
+            return View();
+        }
+
+        public IActionResult AddStudentAction(Student student)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("AddStudent");
+            }
             try
             {
                 return Ok(_studentService.AddStudent(student));
@@ -29,8 +38,17 @@ namespace iLib.Controllers
             }
         }
 
-        public IActionResult AddLibrarian(Librarian librarian)
+        public IActionResult AddLibrarian()
         {
+            return View();
+        }
+
+        public IActionResult AddLibrarianAction(Librarian librarian)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("AddLibrarian");
+            }
             try
             {
                 return Ok(_librarianService.AddLibrarian(librarian));

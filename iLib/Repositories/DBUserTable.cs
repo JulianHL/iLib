@@ -32,11 +32,11 @@ namespace iLib.Repositories
         public bool AddUser(SqlConnection connection, SqlTransaction transaction, User user)
         {
             string storedProcedure = "[dbo].[AddUser]";
-            using SqlCommand command = new SqlCommand( storedProcedure, connection);
+            using SqlCommand command = new SqlCommand(storedProcedure, connection, transaction);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@User_UserId", user.UserId);
+            command.Parameters.AddWithValue("@User_Id", user.UserId);
             command.Parameters.AddWithValue("@User_UserName", user.UserName);
-            command.Parameters.AddWithValue("@User_UserPassword", user.UserPassword);
+            command.Parameters.AddWithValue("@User_Password", user.UserPassword);
             command.Parameters.AddWithValue("@User_UserPassword", user.UserPassword);
             command.Parameters.AddWithValue("@User_Role", user.UserRole);
             command.Parameters.AddWithValue("@User_Email", string.IsNullOrWhiteSpace(user.UserEmail) ? DBNull.Value : user.UserEmail);

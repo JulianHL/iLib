@@ -2,7 +2,7 @@
 {
     public class Librarian : User
     {
-        public Student()
+        public Librarian()
         {
             UserRole = "Librarian";
         }

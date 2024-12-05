@@ -66,7 +66,7 @@ namespace iLib.Services
                 return false;
             }
 
-            int areaCode = (int)phoneNumber / 10000000;
+            int areaCode = (int)(phoneNumber / 10000000);
             if (!PhonNumberAreaCodeValidation(areaCode))
             {
                 return false;

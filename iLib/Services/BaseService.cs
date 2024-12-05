@@ -10,7 +10,7 @@ namespace iLib.Services
         {
             try
             {
-                string ConnectionString = "Data Source =.\\MSSQLSERVER01;Initial Catalog=iLib;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+                string ConnectionString = "Data Source = TEDVSTHEWORLD;Initial Catalog=iLib;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
                 return new SqlConnection(ConnectionString);
             }catch (Exception ex)
             {

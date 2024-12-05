@@ -15,7 +15,12 @@
     </div>
 }
 
-<form asp-controller="Admin" asp-action="AddUser" method="post">
+<form asp-controller="AdminDashboard" asp-action="AddLibrarianAction" method="post">
+    <div class="form-group">
+        <label for="userId">User ID</label>
+        <input asp-for="UserId" type="number" class="form-control" id="userName" placeholder="Enter username" required />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
     <div class="form-group">
         <label for="userName">Username</label>
         <input asp-for="UserName" class="form-control" id="userName" placeholder="Enter username" required />
@@ -28,25 +33,26 @@
     </div>
 
     <div class="form-group">
+        <label for="LibrarianFirstName">First Name</label>
+        <input asp-for="LibrarianFirstName" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <span asp-validation-for="LibrarianFirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="LibrarianLasttName">Last Name</label>
+        <input asp-for="LibrarianLastName" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <span asp-validation-for="LibrarianLastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <label for="userEmail">Email (Optional)</label>
         <input asp-for="UserEmail" type="email" class="form-control" id="userEmail" placeholder="Enter email" />
         <span asp-validation-for="UserEmail" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label for="userPhoneNumber">Phone Number (Optional)</label>
-        <input asp-for="UserPhoneNumber" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
-        <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
-    </div>
 
     <div class="form-group">
-        <label for="StudentFirstName">Phone Number (Optional)</label>
-        <input asp-for="LibrarianFirstName" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
-        <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label for="StudentLastName">Phone Number (Optional)</label>
-        <input asp-for="LibrarianLastName" type="tel" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
+        <label for="UserPhoneNumber">Phone Number (Optional)</label>
+        <input asp-for="UserPhoneNumber" type="number" class="form-control" id="userPhoneNumber" placeholder="Enter phone number" />
         <span asp-validation-for="UserPhoneNumber" class="text-danger"></span>
     </div>
 

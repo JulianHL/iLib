@@ -8,12 +8,12 @@ namespace iLib.Repositories
 
         public bool AddLibrarian(SqlConnection connection, SqlTransaction transaction, Librarian librarian)
         {
-            string storedProcedure = "[dbo].[AddStudent]";
-            using SqlCommand command = new SqlCommand(storedProcedure, connection);
+            string storedProcedure = "[dbo].[AddLibrarian]";
+            using SqlCommand command = new SqlCommand(storedProcedure, connection, transaction);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@User_UserId", librarian.UserId);
-            command.Parameters.AddWithValue("@Student_FirstName", librarian.LibrarianFirstName);
-            command.Parameters.AddWithValue("@Student_LastName", librarian.LibrarianLastName);
+            command.Parameters.AddWithValue("@User_Id", librarian.UserId);
+            command.Parameters.AddWithValue("@Librarian_FirstName", librarian.LibrarianFirstName);
+            command.Parameters.AddWithValue("@Librarian_LastName", librarian.LibrarianLastName);
 
             int affectedRows = command.ExecuteNonQuery();
             return affectedRows != 0;
