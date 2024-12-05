@@ -146,5 +146,34 @@ namespace iLib.Repositories
             return studentbook;
         }
 
+        public List<StudentBook>? SearchStudentBooks(SqlConnection connection, string searchTerm)
+        {
+            string storedProcedure = "[dbo].[SearchBooks]";
+
+            using SqlCommand command = new SqlCommand(storedProcedure, connection);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@SearchTerm", searchTerm);
+
+            using SqlDataReader reader = command.ExecuteReader();
+            if (!reader.HasRows)
+            {
+                return null;
+            }
+
+            List<StudentBook> studentBooks = new List<StudentBook>();
+            while (reader.Read())
+            {
+                studentBooks.Add(new StudentBook
+                {
+                    BookIsbn = reader.GetString(0),
+                    BookTitle = reader.GetString(1),
+                    BookAuthor = reader.GetString(2),
+                    BookFormat = reader.GetString(3),
+                });
+            }
+
+            return studentBooks;
+        }
+
     }
 }

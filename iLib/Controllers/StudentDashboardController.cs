@@ -30,7 +30,26 @@ namespace iLib.Controllers
             }
         }
 
-        public IActionResult StudentBooks(int userId)
+        public IActionResult SearchBooks(string searchTerm)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    throw new ArgumentException("Search term cannot be null or empty", nameof(searchTerm));
+                }
+                var books = _studentBookService.SearchStudentBooks(searchTerm);
+                return View(books);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return View("Index");
+            }
+        }
+
+    public IActionResult StudentBooks(int userId)
         {
             try
             {
